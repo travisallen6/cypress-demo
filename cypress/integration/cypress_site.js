@@ -1,0 +1,15 @@
+describe('testing the cypress website', ()=>{
+    it('first cypress site test', ()=>{
+        cy.visit('https://example.cypress.io')
+        cy.get('a')
+            .contains('type')
+            .should('contain', 'type')
+            .click()
+        cy.get('input#couponCode1.form-control')
+            .type('discount10')
+            .should('have.value', 'discount10')
+        cy.get('button.btn.btn-primary')
+            .contains('Submit')
+            .click()
+    })
+})
